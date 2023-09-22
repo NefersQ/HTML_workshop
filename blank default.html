@@ -1,3 +1,5 @@
-<form action="https://e.tsi.lv/user/profile.php?id=11537&name=Aba&surname=Oba&age=21&ID=12&faculty=Ingeneering" method="get"> 
+<form action="https://e.tsi.lv/user/profile.php?id=11537&name=Aba&surname=Oba&age=21&faculty=Ingeneering" method="get"> 
+  
 <form action="https://e.tsi.lv/user/profile.php?id=11537" 
 #method="post"> 
+  requests.post('https://e.tsi.lv/user/profile.php?id=11537', json={'id': '11537', 'name': 'Aba', 'surname': 'Oba', age: 21, 'faculty' : 'Ingeneering'})
