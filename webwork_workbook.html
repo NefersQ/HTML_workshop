@@ -1,11 +1,19 @@
+//get post
 <form action="https://e.tsi.lv/user/profile.php?id=11537&name=Aba&surname=Oba&age=21&faculty=Ingeneering" method="get"> 
   
 <form action="https://e.tsi.lv/user/profile.php?id=11537" 
 #method="post"> 
   requests.post('https://e.tsi.lv/user/profile.php?id=11537', json={'id': '11537', 'name': 'Aba', 'surname': 'Oba', age: 21, 'faculty' : 'Ingeneering'})
 
+//youtube video
 <iframe width="420" height="315"
 src="https://www.youtube.com/watch?v=dQw4w9WgXcQ?autoplay=1&mute=1">
 </iframe>
+  
+//geolocation
+ navigator.geolocation.getCurrentPosition(successCallback, errorCallback); 
+  
+//drag drop
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-  getCurrentPosition() 
+<img id="drag1" src="img_logo.gif" draggable="true" ondragstart="drag(event)" width="336" height="69">
