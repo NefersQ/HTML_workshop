@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Effects and Animation</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() { // function to fade in 
+            $("#btnFade").click(function() {
+                $("#article").fadeOut(500); 
+            });
+
+            $("#btnSlide").click(function() { // Slides up in 1 second
+                $("#article").slideUp(1000); 
+            });
+
+            $("#btnToggle").click(function() { // Hide and unhide visibility of paragraphs
+                $("#article p").toggle(500); 
+            });
+
+            
+            $("#article h1").hover(function() { // Animation with increasing and decreasing font size 
+                $(this).animate({ fontSize: "30px" }, 500); 
+            }, function() {
+                $(this).animate({ fontSize: "20px" }, 500); 
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="article">
+        <h1>H1 article</h1>
+        <p>Sample paragraphj</p>
+        <button id="btnFade">Click to fade in</button>
+        <button id="btnSlide">click to slide up text</button>
+        <button id="btnToggle">Click to toggle hide text</button>
+    </div>
+
+</body>
+</html>
