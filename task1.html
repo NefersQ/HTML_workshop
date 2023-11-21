@@ -1,0 +1,224 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Classwork 6</title>
+    <link rel="stylesheet" href="task2.css">
+
+   <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        var imgObj = null;
+
+        function init() {
+            imgObj = document.getElementById('myImage');
+            imgObj.style.position = 'relative';
+            imgObj.style.left = '0px';
+        }
+        function moveRight() {
+            imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+        }
+
+        window.onload = init;
+    </script>
+</head>
+
+<body>
+
+    <br>
+
+    <i class="first">Disclaimer: this is TSI University task for HTML, CSS and SASS workshop, not for publishing anywhere on the media. Please include this disclaimer</i>
+    <br>
+
+    <center><h1 id="title">What is Sass? Your guide to this top CSS preprocessor</h1></center>
+
+    <i class="first">By Tammy Coron January 10, 2020</i>
+    <br>
+
+    <h2><center>Discover what Sass is, and learn how to start using it.</center></h2>
+
+    <b>
+        <i>
+            <p class="third">What is Sass? That's the question we here to answer. If you're new to web design, you've probably heard the term floating around, but you might not be quite up to speed with exactly what Sass is, what is does, and whether or not you should be using it. In short, Sass is a CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS. The aim is to make the coding process simpler and more efficient. Let's explore in more detail.</p>
+
+            <p class="third">Article source: https://www.creativebloq.com/web-design/what-is-sass-111517618</p>
+        </i>
+    </b>
+
+    <h2>What is a CSS preprocessor?</h2>
+
+    <p class="third">A CSS preprocessor is a scripting language that extends CSS by allowing developers to write code in one language and then compile it into CSS. Sass is perhaps the most popular preprocessor around right now, but other well-known examples include Less and Stylus.</p>
+    <p class="third">Before we go any further, a quick public service announcement is in order: most web designers would say that if you're new to CSS, you're better off avoiding Sass (or any preprocessors, extensions or frameworks) while you're still learning. While it's true they offer many advantages in speed and efficiency, it's important that you really get to grips with the basics of CSS. Make sure you learn the core concepts before you start exploring shortcuts and confusing things.</p>
+
+
+    <h2>What is Sass?</h2>
+
+    <p><b class="second">Sass is arguably the most useful of all CSS extensions</b></p>
+    <p class="third">Sass (which stands for 'Syntactically awesome style sheets) is an extension of CSS that enables you to use things like variables, nested rules, inline imports and more. It also helps to keep things organised and allows you to create style sheets faster.</p>
+    <p class="third">
+        Sass is compatible with all versions of CSS. The only requirement for using it is that you must have Ruby installed. Users are also asked to follow the Sass Community Guidelines.
+        <br>How to use Sass
+    </p>
+    <p class="third">In the following section, we'll outline some basic tips for using Sass, using examples from the official Sass website. Take a look at the Sass Documentation for additional references and examples.</p>
+
+    <h2>Syntax</h2>
+    <p><b class="second">Sass includes two syntax options:</b></p>
+    <li class="third">SCSS (Sassy CSS): Uses the .scss file extension and is fully compliant with CSS syntax</li>
+    <li class="third">Indented (simply called 'Sass'): Uses .sass file extension and indentation rather than brackets; it is not fully compliant with CSS syntax, but it's quicker to write</li>
+    <br>
+    <i class="second">Note that files can be converted from one syntax to the other using the sass-convert command.</i>
+
+    <h2>Variables</h2>
+    <p class="third">Just like other programming languages, Sass allows the use of variables that can store information you can use throughout your style sheet. For example, you can store a colour value in a variable at the top of the file, and then use this variable when setting the colour of your elements. This enables you to quickly change your colours without having to modify each line separately.</p>
+    <h4>For example:</h4>
+    <i>
+        <p class="third">
+            $font-stack:    Helvetica, sans-serif;
+            <br>$primary-color: #333;
+            <br> body {
+            <br> font: 100% $font-stack;
+            <br> color: $primary-color;
+            <br> }
+            <br>
+            <br> The following CSS will be produced:
+            <br>
+            <br> body {
+            <br> font: 100% Helvetica, sans-serif;
+            <br> color: #333;
+            <br> }
+        </p>
+    </i>
+
+    <h2>Nesting</h2>
+    <p class="third">Nesting is a double-edged sword. While it provides an excellent method for reducing the amount of code you need to write, it can also lead to over-qualified CSS if not executed carefully. The idea is to nest your CSS selectors in such a way as to mimic your HTML hierarchy.</p>
+    <p class="third">The following shows a basic navigation style that uses nesting:</p>
+    <i>
+        <p class="third">
+            nav {
+            <br> ul {
+            <br> margin: 0;
+            <br> padding: 0;
+            <br> list-style: none;
+            <br> }
+            <br>
+            <br>   li { display: inline-block; }
+            <br>
+            <br> a {
+            <br> display: block;
+            <br>     padding: 6px 12px;
+            <br>     text-decoration: none;
+            <br>   }
+            <br> }
+        </p>
+    </i>
+
+    <h5>The CSS output is as follows:</h5>
+    <i>
+        <p class="third">
+            nav ul {
+            <br>   margin: 0;
+            <br>   padding: 0;
+            <br>   list-style: none;
+            <br> }
+            <br>
+            <br> nav li {
+            <br>   display: inline-block;
+            <br> }
+            <br>
+            <br> nav a {
+            <br>   display: block;
+            <br>   padding: 6px 12px;
+            <br>   text-decoration: none;
+            <br> }
+        </p>
+    </i>
+
+    <h2>Partials</h2>
+    <p class="third">
+        Partials are smaller Sass files that can be imported (see next section) into other Sass files. Think of partials as code snippets. With these code snippets, your CSS can now be modular and easier to maintain. A partial is designated as such by naming it with a leading underscore: _partial.scss.
+        Import
+    </p>
+    <p class="third">Used with Partials (see previous section), the @import directive allows you to import your partial files into the current file, to build one single CSS file. Be mindful of how many imports you're using as an HTTP request will be generated for each one.</p>
+    <p class="third">// _reset.scss</p>
+    <i>
+        <p class="third">
+            html,
+            <br> body,
+            <br> ul,
+            <br> ol {
+            <br>    margin: 0;
+            <br>   padding: 0;
+            <br> }
+        </p>
+    </i>
+    <p class="third">// basefile.scss</p>
+    <p class="third">@import 'reset';</p>
+    <i>
+        <p class="third">
+            body {
+            <br>   font: 100% Helvetica, sans-serif;
+            <br>   background-color: #efefef;
+            <br> }
+            <br>
+            <br> And the corresponding CSS output:
+            <br>
+            <br> html, body, ul, ol {
+            <br>   margin: 0;
+            <br>   padding: 0;
+            <br> }
+            <br>
+            <br> body {
+            <br>   font: 100% Helvetica, sans-serif;
+            <br>   background-color: #efefef;
+            <br> }
+            <br>
+            <br> Note: When importing partials, you don't need to include the file extension or the underscore.
+        </p>
+    </i>
+
+    <h2>Mixins</h2>
+    <p><b class="second">One of the advantages of using preprocessors is their ability to take complex, long-winded code and simplify it. This is where mixins come in handy! </b></p>
+    <p class="third">For example, if you need to include the vendor prefixes, you can use a mixin instead. Take a look at this example for border-radius:</p>
+    <i>
+        <p class="third">
+            @mixin border-radius($radius) {
+            <br>   -webkit-border-radius: $radius;
+            <br>      -moz-border-radius: $radius;
+            <br>       -ms-border-radius: $radius;
+            <br>           border-radius: $radius;
+            <br> }
+            <br>
+            <br> .box { @include border-radius(10px); }
+        </p>
+    </i>
+    <p class="third">Notice the @mixin directive at the top. It has been given the name border-radius and uses the variable $radius as its parameter. This variable is used to set the radius value for each element. </p>
+    <p class="third">Later, the @include directive is called, along with the mixin name (border-radius) and a parameter (10px). Thus .box { @include border-radius(10px); }.</p>
+    <p class="second"><b>The following CSS is produced:</b></p>
+    <i>
+        <p class="third">
+            .box {
+            <br>   -webkit-border-radius: 10px;
+            <br>   -moz-border-radius: 10px;
+            <br>   -ms-border-radius: 10px;
+            <br>   border-radius: 10px;
+            <br> }
+        </p>
+    </i>
+
+    <h2>Extend/Inheritance</h2>
+    <p class="third">The @extend directive has been called one of Sass' most powerful features. After seeing it in action, it's clear why.</p>
+    <p class="third">
+        The idea is that with this directive you won't have to include multiple class names on your HTML elements and can keep your code DRY (don't repeat yourself). Your selectors can inherit the styles of other selectors, and then be easily extended when required. Now that's powerful.
+        Operators
+    </p>
+    <p class="third">Having the ability to perform calculations in your CSS allows you to do more, like convert pixel values into percentages. You'll have access to standard maths functions like addition, subtraction, multiplication and division. Of course, these functions can be combined to create complex calculations.</p>
+    <p class="third">In addition, Sass includes a few built-in functions to help manipulate numbers. Functions like percentage(), floor() and round() to name a few.</p>
+
+    <h2> Tammy Coron</h2>
+    <p><b class="second">Tammy is an independent creative professional and the host of Roundabout: Creative Chaos. She’s also the owner of Just Write Code, an independent production company located in West Tennessee. For more information about Tammy, visit her website by clicking the icons above. </b></p>
+
+</body>
+</html>
